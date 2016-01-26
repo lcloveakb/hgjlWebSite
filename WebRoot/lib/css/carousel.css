@@ -1,0 +1,98 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+
+.v_out {
+	width: 748px;
+	margin: 20px auto;
+	overflow: hidden;
+}
+
+.v_show {
+	width: 320px;
+	overflow: hidden;
+	position: relative;
+	height: 285px;
+	float: left
+}
+
+.v_cont {
+	width: 6650px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+.v_cont ul {
+	float: left;
+	text-align: center;
+	line-height: 50px;
+}
+
+.v_cont ul li {
+	width: 300px;
+	height: 250px;
+	float: left;
+	margin-top: 3px;
+}
+
+/*---Ô²È¦---*/
+.v_out_p {
+	position: relative;
+	overflow: visible;
+	margin-left: 80px;
+	
+}
+
+.circle {
+	position: absolute;
+	left: 40px;
+	top: 290px;
+}
+
+.circle li {
+	width: 100px;
+	height: 40px;
+	float: left;
+	margin-right: 10px;
+}
+
+.circle .circle-cur {
+	border: 18px solid white;
+}
+
+/*---ÇÐ»»---*/
+.prev,.next {
+	float: left;
+	padding: 105px 9px 0
+}
+
+.prev a {
+	text-align: center;
+	font-size: 28px;
+	text-decoration: none;
+	margin-right: 10px;
+}
+
+.prev .ico_1 {
+	background: url(input_a.gif) no-repeat 0 -3757px;
+}
+
+.next a {
+	text-align: center;
+	font-size: 28px;
+	text-decoration: none;
+	margin-left: 10px;
+}
+
+.next .ico_2 {
+	background: url(input_a.gif) no-repeat right -3757px;
+}
+
+.prev,.prev a,.next,.next a {
+	width: 21px;
+	height: 28px;
+	display: block
+}

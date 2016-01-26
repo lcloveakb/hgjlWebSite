@@ -1,0 +1,247 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+a:HOVER {
+	text-decoration: none;
+}
+
+.navigation_list {
+	width: 100px;
+	height: 300px;
+	position: fixed;
+	right: 250px;
+	top: 500px;
+}
+
+.navbar-inner {
+	min-height: 40px;
+	padding-right: 20px;
+	padding-left: 20px;
+	background-color: #fafafa;
+	background-image: -moz-linear-gradient(top, #fff, #f2f2f2);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fff),
+		to(#f2f2f2));
+	background-image: -webkit-linear-gradient(top, #fff, #f2f2f2);
+	background-image: -o-linear-gradient(top, #fff, #f2f2f2);
+	background-image: linear-gradient(to bottom, #fff, #f2f2f2);
+	background-repeat: repeat-x;
+	border: 1px solid #d4d4d4;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 10px;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff',
+		endColorstr='#fff2f2f2', GradientType=0);
+	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+	-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+	width: 94%;
+	height: 20px;
+	position: fixed;
+	z-index: 2;
+}
+
+.carousel-inner {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	margin-top: 60px;
+}
+
+.sapn {
+	width: 470px;;
+}
+
+.row-fluid .span5 {
+	width: 850px;
+	margin-top: 20px;
+}
+
+.span5 .span5_div ul li {
+	width: 400px;
+	float: left;
+	list-style-type: none;
+}
+
+.pageMoreWrap_a {
+	display: block;
+	width: 300px;
+	height: 37px;
+	background-color: -webkit
+		-gradient(liner, left top, left bottom, color-stop(12%, #BFC0C2))
+		#e1e2e5;
+	color: #51545b;
+	font-weight: 700;
+	line-height: 37px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 14px;
+	margin-top: 200px;
+	position: absolute;
+	right: 380px;
+	width: 300px;
+	height: 37px;
+	background-color: -webkit
+		-gradient(liner, left top, left bottom, color-stop(12%, #BFC0C2))
+		#e1e2e5;
+	height: 37px;
+	background-color: -webkit
+		-gradient(liner, left top, left bottom, color-stop(12%, #BFC0C2))
+		#e1e2e5;
+}
+
+#pageMoreWrap {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.carousel-inner img {
+	width: 450px;
+	height: 300px;
+}
+
+.address {
+	margin-left: -30px;
+	width: 105%;
+	height: 400px;
+	background-image:url("../../images/cityLandmarks.png");
+	background-repeat: no-repeat;
+	background-position: 10.5% bottom;
+	background-size: 100%;
+	background-color: #ECECEC;
+	text-align: center;
+	padding-top: 80px;
+	font-weight: bold;
+	color: #989898;
+	font-size: 22px;
+	
+}
+
+.address h2 {
+	color: #797979;
+}
+
+
+.zh-backtotop {
+	opacity: 1;
+	position: fixed;
+	bottom: 20px;
+	right: 1%;
+	z-index: 19;
+	margin-left: 230px;
+}
+
+.zh-backtotop .btn-action {
+	display: block;
+	width: 50px;
+	height: 50px;
+	background-color: #ddd;
+	border-radius: 15px;
+	border: 0;
+	/* cursor: pointer; */
+	position: relative;
+}
+
+.zh-backtotop a:hover {
+	background-color: #E7E7E7;
+}
+
+.zh-backtotop .btn-action.zh-backtotop .btn-action {
+	display: block;
+	width: 38px;
+	height: 38px;
+	background-color: #ddd;
+	border-radius: 3px;
+	border: 0;
+	cursor: pointer;
+	position: relative;
+}
+
+.zh-backtotop .arrow {
+	width: 3px;
+	height: 0;
+	top: 2px;
+	border: 9px solid transparent;
+	border-bottom-color: #aaa;
+}
+
+.zh-backtotop .stick {
+	width: 8px;
+	height: 15px;
+	top: 20px;
+	border-radius: 1px;
+	background-color: #aaa;
+}
+
+.zh-backtotop div {
+	position: absolute;
+	right: 0;
+	left: 0;
+	margin: auto;
+}
+
+.caption p {
+	text-align: center;
+}
+
+.btn-lg {
+	width: 220px;
+	height: 46px;
+	font-size: 21px;
+	margin-top: 35px;
+}
+
+.modal-body {
+	margin: 0 auto;
+	width: 210px;
+	height: 300px;
+}
+
+#pullbottom {
+	padding-left: 40px;
+	padding: 0 50px 25px 155px;
+	text-align: center;
+}
+
+#pageMore:HOVER {
+	background-color: #9E9E9E;
+	color: #FFFFFF;
+}
+
+#pageMore {
+	display: block;
+	cursor: pointer;
+	background: #e1e2e5;
+	width: 400px;
+	height: 50px;
+	color: #51545b;
+	font-weight: 700;
+	line-height: 50px;
+	text-align: center;
+	margin: 30px auto 40px;
+	text-decoration: none;
+	font-size: 16px;
+	position: relative;
+	z-index: 5;
+	-webkit-transition: all ease .7s;
+	-moz-transition: all ease .7s;
+	transition: all ease .7s;
+	border-radius: 25px;
+}
+
+.copyright{
+	
+  background-color: #222531;
+  height: 130px;
+  margin: 0;
+  padding: 0;
+  clear: both;
+  width: 100%;
+   line-height: 30px !important;
+}
+
+.container-fluid {
+  padding-right: 20px;
+  padding-left: 20px;
+}

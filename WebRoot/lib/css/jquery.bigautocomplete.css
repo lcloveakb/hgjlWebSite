@@ -1,0 +1,43 @@
+.bigautocomplete-layout {
+	display: block;
+	background-color: #FFFFFF;
+	border: 1px dashed #BCBCBC;
+	position: absolute;
+	z-index: 100;
+	max-height: 220px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	position: absolute;
+	top: 35px;
+	right: 243px;
+	border-top: 0px;
+	width: 203px;
+	line-height: 25px;
+	font-size: 17px;
+	color: #333;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.bigautocomplete-layout table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	background: none repeat scroll 0 0 #FFFFFF;
+	width: 100%;
+	cursor: default;
+}
+
+.bigautocomplete-layout table tr {
+	background: none repeat scroll 0 0 #FFFFFF;
+}
+
+.bigautocomplete-layout .ct {
+	background: none repeat scroll 0 0 #D2DEE8 !important;
+}
+
+.bigautocomplete-layout div {
+	word-wrap: break-word;
+	word-break: break-all;
+	padding: 2px 7px;
+	font-size: 12px;
+	line-height: 25px;
+}

@@ -1,0 +1,116 @@
+body {
+	font-family: "Hiragino Sans GB", "Microsoft YaHei",
+		"WenQuanYi Micro Hei", sans-serif;
+}
+
+.base_body {
+	width: 1000px;
+	margin: 0 auto;
+	background-color: white;
+	margin-bottom: 60px;
+}
+
+.toolbar {
+	padding-top: 80px;
+	width: 230px;
+	margin-right: 40px;
+	float: left;
+}
+
+.toolbar ul {
+	border-right: 1px solid #ccc;
+	width: 230px;
+	top: 135px;
+	position: fixed;
+}
+
+ul,ol {
+	padding-left: 30px;
+}
+
+.toolbar .active {
+	margin-right: -2px;
+	padding-right: 5px;
+	border-right: 3px solid #ccc;
+	font-weight: bold;
+}
+
+.toolbar li {
+	padding: 7px 0px;
+	font-size: 18px;
+	line-height: 16px;
+	cursor: pointer;
+}
+
+ul {
+	padding: 0;
+	list-style: none;
+}
+
+li {
+	margin: 0;
+}
+
+li a {
+	text-decoration: none;
+}
+
+li a:HOVER {
+	text-decoration: none;
+}
+
+.toolbar li {
+	padding: 7px 0px;
+	font-size: 18px;
+	line-height: 16px;
+	cursor: pointer;
+}
+
+.content {
+	overflow: hidden;
+	margin-left: 225px;
+	padding: 0px 35px;
+}
+
+section {
+	margin: 30px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	margin: 20px 0 10px;
+	padding: 0;
+	font-weight: bold;
+	-webkit-font-smoothing: antialiased;
+	cursor: text;
+	position: relative;
+}
+
+.base_body section ul li a {
+	display: block;
+}
+
+.pager {
+	font-size: 20px;
+	width: 570px;
+	height: 42px;
+}
+
+.pager li a {
+	padding: 10px;
+	padding-left: 50px;
+}
+
+.navbar {
+	
+	margin-bottom: 85px;
+}
+
+.form-signin .form-control {
+	width: 220px;
+	height: 30px;
+}
+#base .content .pager {
+	
+	
+}
+

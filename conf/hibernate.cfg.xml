@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC 
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN" 
+          "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+		<!-- 显示实际操作数据库时的SQL -->
+		<property name="show_sql">true</property>
+
+		<!-- 配置Spring管理session及其事务 -->
+		<!-- <property name="current_session_context_class">thread</property> -->
+		<property name="current_session_context_class">
+			org.springframework.orm.hibernate4.SpringSessionContext
+		</property>
+
+		<!-- 配置EhCache缓存 -->
+		<property name="hibernate.cache.region.factory_class">
+			org.hibernate.cache.ehcache.EhCacheRegionFactory
+		</property>
+		<property name="hibernate.cache.provider_class">
+			net.sf.ehcache.hibernate.EhCacheProvider
+		</property>
+
+		<!-- 开启查询缓存 -->
+		<property name="hibernate.cache.use_query_cache">true</property>
+		<!-- 开启二级缓存 -->
+		<property name="hibernate.cache.use_second_level_cache">true</property>
+		<property name="javax.persistence.validation.mode">none</property>
+
+		<!-- SQL方言 -->
+		<property name="dialect">org.hibernate.dialect.SQLServer2008Dialect</property>
+
+		<!-- 配置JDBC参数 -->
+		<!-- <property name="connection.driver_class">com.microsoft.jdbc.sqlserver.SQLServerDriver</property>
+		<property name="connection.url">jdbc:microsoft:sqlserver://localhost:1433;DatabaseName=social</property> -->
+		<property name="connection.driver_class">net.sourceforge.jtds.jdbc.Driver</property>
+        <property name="connection.url">jdbc:jtds:sqlserver://127.0.0.1:1433;DatabaseName=social</property>
+		<property name="connection.username">sa</property>
+		<property name="connection.password">root66</property>
+
+		<property name="connection.useUnicode">true</property>
+		<property name="connection.characterEncoding">utf-8</property>
+
+		<!-- c3p0数据库连接池配置 -->
+		<property name="connection.provider_class">org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider</property>
+		<property name="hibernate.c3p0.min_size">10</property>
+		<property name="hibernate.c3p0.max_size">30</property>
+		<property name="hibernate.c3p0.timeout">1800</property>
+		<property name="hibernate.c3p0.max_statements">500</property>
+		<property name="hibernate.c3p0.idle_test_period">120</property>
+		<property name="hibernate.c3p0.acquire_increment">4</property>
+		<property name="hibernate.c3p0.validate">true</property>
+
+		<!-- 映射文件配置 -->
+		<mapping resource="all.hbm.xml" />
+
+		<!-- 缓存类型配置 -->
+		<class-cache usage="read-write" class="com.senseId.social.entity.New" />
+		<class-cache usage="read-write" class="com.senseId.social.entity.Product" />
+		<class-cache usage="read-write" class="com.senseId.social.entity.Article" />
+		<class-cache usage="read-write" class="com.senseId.social.entity.DownloadItem" />
+		<class-cache usage="read-write" class="com.senseId.social.entity.DownloadItemCategory" />
+		<class-cache usage="read-write" class="com.senseId.social.entity.DeveloperItem" />
+		<class-cache usage="read-write" class="com.senseId.social.entity.DeveloperItemCategory" />
+		<class-cache usage="read-write" class="com.senseId.social.entity.CommentItem" />
+		<class-cache usage="read-write" class="com.senseId.social.entity.ShareItem" />
+		<class-cache usage="read-write" class="com.senseId.social.entity.User" />
+
+	</session-factory>
+
+</hibernate-configuration>

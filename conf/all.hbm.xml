@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	
+	<!-- 用户表映射 -->
+	<class name="com.senseId.social.entity.User" table="userinfo">
+		<cache usage="read-write"/>
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="username" type="java.lang.String" column="username" update="false"></property>
+		<property name="password" type="java.lang.String" column="password"></property>
+		<property name="email" type="java.lang.String" column="email"></property>
+		<property name="telephone" type="java.lang.String" column="telephone"></property>
+		<property name="createTime" type="java.util.Date" column="createtime" update="false"></property>
+		<property name="weiboId" type="java.lang.String" column="weiboId"></property>
+		<property name="weixinId" type="java.lang.String" column="weixinId"></property>
+		<property name="qqId" type="java.lang.String" column="qqId"></property>
+		<property name="qzoneId" type="java.lang.String" column="qzoneId"></property>
+		<property name="loginTime" type="java.util.Date" column="loginTime"></property>
+		<property name="loginCount" type="java.lang.Integer" column="loginCount"></property>
+		<property name="credits" type="java.lang.Integer" column="credits"></property>
+		<property name="level" type="java.lang.String" column="level"></property>
+		<property name="sign" type="java.lang.String" column="sign"></property>
+		<property name="passwordCode" type="java.lang.String" column="passwordcode"></property>
+		<property name="validate" type="java.lang.Boolean" column="validate"></property>
+	</class>
+	
+	<!-- article表映射 -->
+	<class name="com.senseId.social.entity.Article" table="article" polymorphism="explicit">
+		<cache usage="read-write"/>
+		<id name="articleId" type="java.lang.Long" column="articleid">
+			<generator class="native"></generator>
+		</id>
+		<property name="type" type="java.lang.Integer" column="type" update="false"></property>
+		<property name="clickCount" type="java.lang.Integer" column="clickcount"></property>
+		<property name="shareCount" type="java.lang.Integer" column="sharecount"></property>
+		<property name="createTime" type="java.util.Date" column="createtime" update="false"></property>
+		<property name="creator" type="java.lang.String" column="creator" update="false"></property>
+		<property name="title" type="java.lang.String" column="title"></property>
+		<property name="shown" type="java.lang.Boolean" column="shown"></property>
+		<property name="indexImg" type="java.lang.String" column="indeximg"></property>
+		<property name="brief" type="java.lang.String" column="brief"></property>
+		<property name="top" type="java.lang.Long" column="top_level"></property>
+	</class>
+	
+	<!-- 评论表映射 -->
+	<class name="com.senseId.social.entity.CommentItem" table="comment_item">
+		<cache usage="read-write"/>
+		<id name="id" type="java.lang.String" column="id">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="userId" type="java.lang.Integer" column="userid" update="false"></property>
+		<property name="articleId" type="java.lang.Long" column="articleid"  update="false"></property>
+		<property name="content" type="java.lang.String" column="content"></property>
+		<property name="time" type="java.util.Date" column="time" update="false"></property>
+		
+	</class>
+	
+	<!-- 开发者栏目表映射 -->
+	<class name="com.senseId.social.entity.DeveloperItem" table="developer_item">
+		<cache usage="read-write"/>
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="content" type="java.lang.String" column="content"></property>
+		<property name="categoryId" type="java.lang.Integer" column="categoryid" update="false"></property>
+		<property name="parentId" type="java.lang.Long" column="parentid" update="false"></property>
+	</class>
+	
+	<!-- 开发者栏目分类表映射 -->
+	<class name="com.senseId.social.entity.DeveloperItemCategory" table="developer_item_category">
+		<cache usage="read-write"/>
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="name" type="java.lang.String" column="name"></property>
+	</class>
+	
+	<!-- 下载资源表映射 -->
+	<class name="com.senseId.social.entity.DownloadItem" table="download_item">
+		<cache usage="read-write"/>
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="title" type="java.lang.String" column="title"></property>
+		<property name="url" type="java.lang.String" column="url"></property>
+		<property name="categoryId" type="java.lang.Integer" column="categoryid" update="false"></property>
+		
+		
+	</class>
+	
+	<!-- 下载资源分类表映射 -->
+	<class name="com.senseId.social.entity.DownloadItemCategory" table="download_item_category">
+		<cache usage="read-write"/>
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="name" type="java.lang.String" column="name"></property>
+	</class>
+	
+	<!-- 新闻表映射 -->
+	<class name="com.senseId.social.entity.New" table="new">
+		<cache usage="read-write"/>
+		<id name="id" type="java.lang.String" column="id">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="content" type="java.lang.String" column="content"></property>
+		<property name="parentId" type="java.lang.Long" column="parentid" update="false"></property>
+		<property name="category" type="java.lang.Integer" column="category" update="false"></property>
+		<property name="source" type="java.lang.String" column="source" update="false"></property>
+		<property name="imgs" type="java.lang.String" column="imgs"></property>
+	</class>
+	
+	<!-- 产品表映射 -->
+	<class name="com.senseId.social.entity.Product" table="product">
+		<cache usage="read-write"/>
+		<id name="id" type="java.lang.String" column="id">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="params" type="java.lang.String" column="params"></property>
+		<property name="parentId" type="java.lang.Long" column="parentid" update="false"></property>
+		<property name="category" type="java.lang.Integer" column="category"></property>
+		<property name="imgs" type="java.lang.String" column="imgs"></property>
+	</class>
+	
+	<!-- 分享表映射 -->
+	<class name="com.senseId.social.entity.ShareItem" table="share_item">
+		<cache usage="read-write"/>
+		<id name="id" type="java.lang.Long" column="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="time" type="java.util.Date" column="time" update="false"></property>
+		<many-to-one name="article" class="com.senseId.social.entity.Article" column="articleid" lazy="proxy"/>
+		<many-to-one name="user" class="com.senseId.social.entity.User" column="userid" lazy="proxy"/>
+		
+	</class>
+	
+</hibernate-mapping>

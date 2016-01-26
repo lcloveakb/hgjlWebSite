@@ -1,0 +1,40 @@
+
+
+.thumbnail img {
+	width: 300px;
+	height: 200px;
+}
+
+.thumbnails h3 {
+	color: #5C5C5C;
+}
+
+.caption p {
+	color: #5C5C5C;
+}
+
+.thumbnails {
+	text-align: center;
+}
+
+.thumbnails ul li a img{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.thumbnail h3 {
+	text-align: center;
+}
+.more {
+	margin-left: 1300px;
+}
+
+.row-fluid .breadcrumb {
+	margin: -65 20px;
+}
+
+.modal-body .form-control {
+	
+	width: 220px;
+	height: 30px;
+}

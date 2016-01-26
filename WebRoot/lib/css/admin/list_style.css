@@ -1,0 +1,53 @@
+body {
+	text-align: center;
+	font-family: Microsoft Yahei;
+}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+	color: blue;
+}
+
+.data_list {
+	width: 900px;
+	margin-top: 10px;
+	text-align: center;
+}
+
+.data_list td {
+	border: 1px solid rgb(179, 179, 179);
+	height: 20px;
+}
+
+.filter {
+	margin: 20px auto;
+	width: 900px;
+	text-align: right
+}
+
+#cats {
+	width: 200px;
+	height: 30px;
+	text-align: center;
+}
+
+/* 分页 */
+.pagenav {
+	margin: 0 auto;
+}
+
+.mod_pagenav_main {
+	font-size:13px;
+}
+
+.mod_pagenav_option {
+	font-size:13px;
+	letter-spacing:2px;
+	margin-top: 10px;
+}
+
+.mod_pagenav_option input {
+	text-align: center;
+	width: 30px;
+}

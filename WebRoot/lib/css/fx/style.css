@@ -1,0 +1,108 @@
+.fx_line {
+	border-bottom: 1px solid #eaeaea;
+	width: 500px;
+	margin-left: 880px;
+}
+
+.fx {
+	height: 40px;
+	line-height: 40px;
+	margin-left: 1150px;
+}
+
+.fx-left {
+	height: 40px;
+	float: left;
+	text-align: right;
+	font-size: 13px;
+}
+
+.fx-right {
+	width: 150px;
+	height: 18px;
+	float: left;
+	margin-top: 8px;
+}
+
+.bdshare-button-style0-16 {
+	zoom: 1;
+}
+
+.bdshare-button-style0-16 a,.bdshare-button-style0-16 .bds_more {
+	float: left;
+	font-size: 12px;
+	padding-left: 17px;
+	line-height: 16px;
+	height: 16px;
+	background-image: url(../../images/fx_icons.png);
+	background-repeat: no-repeat;
+	cursor: pointer;
+	margin: 6px 6px 6px 0;
+}
+
+.bdshare-button-style0-16 .bds_qzone {
+	background-position: 0 -52px;
+}
+
+a.bds_qzone {
+	color: #3B5998;
+	text-decoration: none;
+}
+
+.bdshare-button-style0-16 .bds_tsina {
+	background-position: 0 -104px;
+}
+
+.bdshare-button-style0-16 .bds_tqq {
+	background-position: 0 -260px;
+}
+
+.bdshare-button-style0-16 .bds_weixin {
+	background-position: 0 -1612px;
+}
+
+.bdshare-button-style0-16 .bds_renren {
+	background-position: 0 -208px;
+}
+
+.bdshare-button-style0-16 .bds_baidu {
+	background-position: 0 -728px;
+}
+
+/* Ê×Ò³·ÖÏí²ã */
+.reveal-modal {
+	display: none;
+	top: 250px;;
+	left: 50%;
+	margin-left: -300px;
+	width: 520px;
+	background: #eee ;
+	position: fixed;
+	z-index: 101;
+	padding: 30px 40px 34px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+	-box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+}
+
+.img_diminish {
+	
+	width: 98px;
+	height: 98px;
+	margin: 15px 30px;
+}
+
+.reveal-modal .close-reveal-modal {
+	font-size: 22px;
+	line-height: .5;
+	position: absolute;
+	top: 8px;
+	right: 11px;
+	color: #aaa;
+	text-shadow: 0 -1px 1px rbga(0, 0, 0, .6);
+	font-weight: bold;
+	cursor: pointer;
+}

@@ -1,0 +1,81 @@
+@font-face {
+  font-family: 'arduino-icons';
+  src: url('../font/arduino-icons.eot?43721627');
+  src: url('../font/arduino-icons.eot?43721627#iefix') format('embedded-opentype'),
+       url('../font/arduino-icons.woff?43721627') format('woff'),
+       url('../font/arduino-icons.ttf?43721627') format('truetype'),
+       url('../font/arduino-icons.svg?43721627#arduino-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'arduino-icons';
+    src: url('../font/arduino-icons.svg?43721627#arduino-icons') format('svg');
+  }
+}
+*/
+ 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "arduino-icons";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+     
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.icon-temboo:before { content: '\e819'; } /* '卯聽鈩� */
+.icon-search-1:before { content: '\e80f'; } /* '卯聽聫' */
+.icon-globe:before { content: '\e805'; } /* '卯聽鈥� */
+.icon-search-2:before { content: '\e810'; } /* '卯聽聬' */
+.icon-star:before { content: '\e80b'; } /* '卯聽鈥� */
+.icon-user:before { content: '\e809'; } /* '卯聽鈥� */
+.icon-plus:before { content: '\e81b'; } /* '卯聽鈥� */
+.icon-minus:before { content: '\e81d'; } /* '卯聽聺' */
+.icon-eye:before { content: '\e80c'; } /* '卯聽艗' */
+.icon-comment:before { content: '\e80d'; } /* '卯聽聧' */
+.icon-chat:before { content: '\e812'; } /* '卯聽鈥� */
+.icon-folder:before { content: '\e80a'; } /* '卯聽艩' */
+.icon-cog:before { content: '\e808'; } /* '卯聽藛' */
+.icon-chart-line:before { content: '\e807'; } /* '卯聽鈥� */
+.icon-cancel-circled-1:before { content: '\e81c'; } /* '卯聽艙' */
+.icon-twitter:before { content: '\e801'; } /* '卯聽聛' */
+.icon-facebook-squared:before { content: '\e800'; } /* '卯聽鈧� */
+.icon-gplus:before { content: '\e803'; } /* '卯聽茠' */
+.icon-pinterest:before { content: '\e802'; } /* '卯聽鈥� */
+.icon-left-small:before { content: '\e817'; } /* '卯聽鈥� */
+.icon-right-small:before { content: '\e816'; } /* '卯聽鈥� */
+.icon-ok-1:before { content: '\e813'; } /* '卯聽鈥� */
+.icon-edit:before { content: '\e80e'; } /* '卯聽沤' */
+.icon-down-dir:before { content: '\e818'; } /* '卯聽藴' */
+.icon-left-dir:before { content: '\e814'; } /* '卯聽鈥� */
+.icon-right-dir:before { content: '\e815'; } /* '卯聽鈥� */
+.icon-pencil:before { content: '\e811'; } /* '卯聽鈥� */
+.icon-trash:before { content: '\e81a'; } /* '卯聽拧' */
+.icon-github:before { content: '\e804'; } /* '卯聽鈥� */

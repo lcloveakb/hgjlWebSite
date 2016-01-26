@@ -1,0 +1,26 @@
+body {
+	text-align: center;
+	font-family: Microsoft Yahei;
+}
+
+a {
+	text-decoration: none;
+}
+
+form {
+	margin: 0 auto;
+	font-size: 18px;
+}
+
+form input {
+	width: 200px;
+	height: 34px;
+	margin: 20px;
+	padding: 4px;
+}
+
+.btn_submit {
+	width: 150px;
+	height: 35px;
+}
+

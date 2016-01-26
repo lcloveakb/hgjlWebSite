@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<constant name="struts.action.extension" value="do,action" />
+
+	<!-- Release之后建议改为false -->
+	<constant name="struts.devMode" value="true" />
+
+	<!-- 由Spring容器管理action -->
+	<constant name="struts.objectFactory" value="spring" />
+
+	<!-- 设置action接收请求的编码 -->
+	<constant name="struts.i18n.encoding" value="utf-8"></constant>
+	
+	<!-- 设置文件上传大小限制，value表示字节数  -->
+	<constant name="struts.multipart.maxSize" value="10240000"/> 
+	
+	<package name="basePackage" extends="json-default">
+		<global-results>
+			<result name="error">/WEB-INF/jsp/error/error.jsp</result> 
+		</global-results> 
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception" result="error" />
+		</global-exception-mappings>
+	</package>
+	
+	<!-- 产品 -->
+	<package name="product" namespace="/product" extends="basePackage">
+		<action name="productAction_*" method="{1}" class="productAction">
+			<result name="index">/WEB-INF/jsp/article/product/product_list.jsp</result>
+			<result name="listInCategory">/WEB-INF/jsp/article/product/listInCategory.jsp</result>
+			<result name="detail">/WEB-INF/jsp/article/product/product_details.jsp</result>
+			<result name="add">/pro_add.jsp</result>
+			<result name="toProList">/pro_list.jsp</result>
+			<result name="toUpdate">/pro_update.jsp</result>
+			<result name="show" type="redirectAction">product/productAction_listInCategoryBackend.action</result>
+			<result name="ajax2" type="json">	<!-- IndexImg提交结果 -->
+				<param name="contentType">text/html</param>  
+        		<param name="includeProperties">indexFileName</param>
+			</result>
+			<result name="ajax3" type="json">	<!-- attachmentFileName修改产品时图片上传提交结果 -->
+				<param name="contentType">text/html</param>  
+        		<param name="includeProperties">attachmentFileName</param>
+			</result>
+			<result name="ajax" type="json"></result>
+		</action>
+	</package>
+	
+	<!-- 下载 -->
+	<package name="download" namespace="/download" extends="basePackage">
+		<action name="downloadAction_*" method="{1}" class="downloadAction">
+			<param name="inputPath">/download</param>
+			<result name="download_success" type="stream">
+				<!-- MIME类型 -->
+				<param name="contentType">application/octet-stream</param>
+				<!-- inputName的值与action获取输入流资源的方法名相对应(action中定义getInputStream方法,并且返回类型为InputStream) -->
+				<param name="inputName">inputStream</param>
+				<!-- 设置带附件的文件 动态获取文件名(action中定义getFileName方法) -->
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<!-- 设置缓冲大小 -->
+				<param name="bufferSize">1024</param>
+			</result>
+			<result name="index">/WEB-INF/jsp/download/download_list.jsp</result>
+			
+			<!-- 后台相关  -->
+			<result name="toCatsList">/downloadCats_list.jsp</result>
+			<result name="update">/downloadCats_update.jsp</result>
+			<result name="toAddCat">/dowmloadCats_add.jsp</result>
+			<result name="toItemList">/downloadItem_list.jsp</result>
+			<result name="toAddItem">/downloadItem_add.jsp</result>
+			<result name="toItemUpdate">/downloadItem_update.jsp</result>
+			<result name="showItem" type="redirect">download/downloadAction_itemList.action</result>
+			<result name="show" type="redirectAction">download/downloadAction_catsList.action</result>
+		</action>
+	</package>
+	
+	<!-- 开发者 -->
+	<package name="developer" namespace="/developer" extends="basePackage">
+		<action name="developerAction_*" method="{1}" class="developerAction">
+			<result name="index">/WEB-INF/jsp/developer/developer_main.jsp</result>
+			<result name="detail">/WEB-INF/jsp/developer/developer_details.jsp</result>
+			<result name="preview">/WEB-INF/jsp/developer/preview.jsp</result>
+			<result name="add">/guide_add.jsp</result>
+			<result name="ajax" type="json"></result>
+			<result name="toCatsList">/item_list.jsp</result>
+			<result name="toUpdate">/item_update.jsp</result>
+			<result name="del" type="redirect">developer/developerAction_toCatsList.action</result>
+			<result name="show" type="redirectAction">developer/categoryAction_toCates.action</result>
+		</action>
+		
+		<action name="categoryAction_*" method="{1}" class="developerAction">
+			<result name="cats">/cats_list.jsp</result>
+			<result name="update">/cats_update.jsp</result>
+			<result name="show" type="redirectAction">developer/categoryAction_toCates.action</result>
+		</action>
+	</package>
+	
+	<!-- 新闻 -->
+	<package name="news" namespace="/news" extends="basePackage">
+		<action name="newsAction_*" method="{1}" class="newsAction">
+			<result name="index">/WEB-INF/jsp/article/new/news_list.jsp</result>
+			<result name="newsList">/news_list.jsp</result>
+			<result name="detail">/WEB-INF/jsp/article/new/news_details.jsp</result>
+			<result name="show" type="redirectAction">news/newsAction_listInCategory.action</result>
+			<result name="toUpdate">/news_update.jsp</result>
+			<result name="ajax" type="json"></result>
+			<result name="ajax2" type="json">	<!-- IndexImg提交结果 -->
+				<param name="contentType">text/html</param>  
+        		<param name="includeProperties">indexFileName</param>
+			</result>
+		</action>
+	</package>
+	
+	<!-- 首页 -->
+	<package name="index" namespace="/index" extends="basePackage">
+		<action name="indexAction_*" method="{1}" class="indexAction">
+			<result name="index">/WEB-INF/jsp/index/index.jsp</result>
+			<result name="ajax" type="json"></result>
+		</action>
+	</package>
+	
+	<!-- 搜索 -->
+	<package name="search" namespace="/search" extends="basePackage">
+		<action name="searchAction_*" method="{1}" class="searchAction">
+			<result name="autoComplete" type="json"></result>
+			<result name="detailSearch">/WEB-INF/jsp/search/search.jsp</result>
+			<result name="productDetail" type="redirect">/product/productAction_detail.action?id=${id}</result>
+			<result name="newDetail" type="redirect">/news/newsAction_detail.action?id=${id}</result>
+			<result name="developerDetail" type="redirect">/developer/developerAction_detail.action?id=${id}</result>
+		</action>
+	</package>
+	
+	<!-- 用户 -->
+	<package name="user" namespace="/user" extends="basePackage">
+		<action name="userAction_*" method="{1}" class="userAction">
+			<result name="login">/WEB-INF/jsp/user/login.jsp</result>
+			<result name="register">/WEB-INF/jsp/user/signUp.jsp</result>
+			<result name="activateResult">/WEB-INF/jsp/user/activate_result.jsp</result>
+			<result name="confirmStatus">/WEB-INF/jsp/user/confirmStatus.jsp</result>
+			<result name="urlInvalidate">/WEB-INF/jsp/user/urlInvalidate.jsp</result>
+			<result name="toModifyPassword">/WEB-INF/jsp/user/modifyPassword.jsp</result>
+			<result name="modifyPasswordResult">/WEB-INF/jsp/user/modifyPasswordResult.jsp</result>
+			<result name="info">/WEB-INF/jsp/user/info.jsp</result>
+			<result name="toWeiboInfo">/WEB-INF/jsp/user/weiboInfo.jsp</result>
+			<result name="show" type="redirectAction">
+				<param name="namespace">/index</param>
+				<param name="actionName">indexAction_forward</param>
+			</result>
+			<result name="ajax" type="json"></result>
+		</action>
+	</package>
+	
+	<!-- 评论 -->
+	<package name="comment" namespace="/comment" extends="basePackage">
+		<action name="commentAction_*" method="{1}" class="commentAction">
+			<result name="add" type="json"></result>
+			<result name="page" type="json"></result>
+		</action>
+	</package>
+	
+	<!-- 支持 -->
+	<package name="support" namespace="/support" extends="basePackage">
+		<action name="supportAction_*" method="{1}" class="supportAction">
+			<result name="faq">/WEB-INF/jsp/support/faq.jsp</result>
+			<result name="about">/WEB-INF/jsp/support/about.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 论坛-->
+	<package name="forum" namespace="/forum" extends="basePackage">
+		<action name="forumAction_*" method="{1}" class="forumAction">
+			<result name="forum">/WEB-INF/jsp/forum/forum.jsp</result>
+		</action>
+	</package>
+	
+	<bean type="org.apache.struts2.dispatcher.multipart.MultiPartRequest" class="com.senseId.social.util.RequestParseWrapper" name="myRequestParser" scope="default" optional="true">
+	
+	</bean>
+
+</struts>

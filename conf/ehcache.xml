@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd" updateCheck="true"
+	monitoring="autodetect" dynamicConfig="true">
+
+	<diskStore path="java.io.tmpdir" />
+
+	<defaultCache maxElementsInMemory="10000" eternal="false"
+		timeToIdleSeconds="120" timeToLiveSeconds="120" overflowToDisk="true"
+		memoryStoreEvictionPolicy="LRU" />
+		
+	<cache name="org.hibernate.cache.internal.StandardQueryCache"
+		maxElementsInMemory="5" eternal="false" timeToLiveSeconds="120"
+		overflowToDisk="true" />
+	<cache name="org.hibernate.cache.spi.UpdateTimestampsCache"
+		maxElementsInMemory="5000" eternal="true" overflowToDisk="true" />
+	
+	<cache name="com.senseId.social.entity.User" maxElementsInMemory="500"
+		eternal="false" timeToLiveSeconds="120" overflowToDisk="true" />
+	<cache name="com.senseId.social.entity.Article" maxElementsInMemory="30"
+		eternal="false" overflowToDisk="true" timeToLiveSeconds="300" />
+	<cache name="com.senseId.social.entity.Product" timeToLiveSeconds="300"
+		maxElementsInMemory="200" eternal="false" overflowToDisk="true" />
+	<cache name="com.senseId.social.entity.New" maxElementsInMemory="200"
+		eternal="false" overflowToDisk="true" timeToLiveSeconds="120" />
+	<cache name="com.senseId.social.entity.DeveloperItem"	timeToLiveSeconds="120" 
+		maxElementsInMemory="200" eternal="false" overflowToDisk="true" />
+	<cache name="com.senseId.social.entity.DeveloperItemCategory" timeToLiveSeconds="300"
+		maxElementsInMemory="200" eternal="false" overflowToDisk="true" />
+	<cache name="com.senseId.social.entity.DownloadItem" timeToLiveSeconds="300"
+		maxElementsInMemory="200" eternal="false" overflowToDisk="true" />
+	<cache name="com.senseId.social.entity.DownloadItemCategory" timeToLiveSeconds="300"
+		maxElementsInMemory="200" eternal="false" overflowToDisk="true" />
+	<cache name="com.senseId.social.entity.ShareItem" timeToLiveSeconds="300"
+		maxElementsInMemory="200" eternal="false" overflowToDisk="true" />
+	<cache name="com.senseId.social.entity.CommentItem" timeToLiveSeconds="300"
+		maxElementsInMemory="200" eternal="false" overflowToDisk="true" />
+</ehcache>
